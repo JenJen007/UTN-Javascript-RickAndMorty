@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rick and Morty App</title>
+  <link rel="stylesheet" href="/src/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Eater&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Rick and Morty Characters</h1>
+    <input type="text" id="search-input" placeholder="Buscar personaje..." />
+    <button id="clear-search">Limpiar Búsqueda</button>
+  </header>
+  <main>
+    <div id="filters">
+      <label for="species-filter">Especie:</label>
+      <select id="species-filter">
+        <option value="">Todos</option>
+        <option value="Human">Humano</option>
+        <option value="Alien">Alienígena</option>
+      </select>
+    
+      <label for="status-filter">Estado:</label>
+      <select id="status-filter">
+        <option value="">Todos</option>
+        <option value="Alive">Vivo</option>
+        <option value="Dead">Muerto</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+    
+      <label for="gender-filter">Género:</label>
+      <select id="gender-filter">
+        <option value="">Todos</option>
+        <option value="Male">Masculino</option>
+        <option value="Female">Femenino</option>
+        <option value="Genderless">Sin género</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+    </div>
+
+    <label for="sort-by">Ordenar por:</label>
+    <select id="sort-by">
+      <option value="name-asc">Nombre (A-Z)</option>
+      <option value="name-desc">Nombre (Z-A)</option>
+    </select>
+
+    <label for="episode-search">Buscar por episodio:</label>
+    <select id="episode-search">
+      <option value="">Selecciona un episodio</option>
+    </select>
+
+    <div id="character-list"></div>
+    <p id="message" style="color: red; text-align: center;"></p>
+
+    <div id="pagination">
+      <button id="prev-page">Anterior</button>
+      <span id="page-info">Página 1</span>
+      <button id="next-page">Siguiente</button>
+    </div>
+
+    <div id="modal" style="display: none;">
+      <div id="modal-content">
+        <span id="close-modal">&times;</span>
+        <h2 id="modal-name">Nombre del personaje</h2>
+        <img id="modal-image" alt="Personaje" />
+        <p><strong>Especie:</strong> <span id="modal-species"></span></p>
+        <p><strong>Estado:</strong> <span id="modal-status"></span></p>
+        <p><strong>Género:</strong> <span id="modal-gender"></span></p>
+        <p><strong>Ubicación:</strong> <span id="modal-location"></span></p>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
